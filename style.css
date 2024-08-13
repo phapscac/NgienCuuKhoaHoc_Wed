@@ -1,0 +1,270 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(218,
+            217,
+            217);
+}
+
+button {
+    border: none;
+    background: transparent;
+}
+
+.container {
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: 98vh;
+}
+
+.main {
+    position: relative;
+    border-radius: 20px;
+    border: 2px rgb(189 184 184) solid;
+    width: 50rem;
+    height: 30rem;
+    background: #f9fafb;
+}
+
+form {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+}
+
+.d-none {
+    display: none !important;
+}
+
+.center-el {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image {
+    height: 80%;
+    width: 100%;
+    overflow: hidden;
+}
+
+#text {
+    color: red;
+    margin-bottom: 2rem;
+}
+
+.btn-upload {
+    margin-bottom: 1rem;
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    border: 3px solid;
+    border-color: #FFF #FFF transparent transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+.loader::after,
+.loader::before {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border: 3px solid;
+    border-color: transparent transparent #008aff #008aff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    animation: rotationBack 0.5s linear infinite;
+    transform-origin: center center;
+}
+
+.loader::before {
+    width: 32px;
+    height: 32px;
+    border-color: #FFF #FFF transparent transparent;
+    animation: rotation 1.5s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotationBack {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,
+            -50%);
+    width: 100%;
+    min-height: 100%;
+    display: none;
+    background: rgb(200 199 196 / 0.5);
+    z-index: 999;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.btn {
+    background-image: linear-gradient(135deg, #008aff, #86d472);
+    border-radius: 6px;
+    box-sizing: border-box;
+    color: #ffffff;
+    display: block;
+    height: 50px;
+    font-size: 1.4em;
+    font-weight: 600;
+    padding: 4px;
+    position: relative;
+    text-decoration: none;
+    width: 7em;
+    z-index: 2;
+}
+
+.btn:hover {
+    color: #fff;
+}
+
+.btn .btnspan {
+    align-items: center;
+    background: #0e0e10;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    transition: background 0.5s ease;
+    width: 100%;
+}
+
+.btn:hover .btnspan {
+    background: transparent;
+}
+
+#img-view {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    width: 170px;
+}
+
+.bn3637 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.3rem 1rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    backface-visibility: hidden;
+    border: 0.3rem solid transparent;
+    border-radius: 3rem;
+}
+
+.bn36 {
+    border-color: #fff;
+    transition: transform 0.2s cubic-bezier(0.235,
+            0,
+            0.05,
+            0.95);
+}
+
+.bn36:hover {
+    transform: perspective(1px) scale3d(1.044,
+            1.044,
+            1) translateZ(0) !important;
+}
+
+.list-btn {
+    margin-bottom: 1rem;
+}
+
+.btn-play {
+    padding: 10px;
+    background-color: #adaaaa;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .main {
+        width: 30rem;
+    }
+
+    .image img {
+        width: 10rem;
+    }
+
+    .btn {
+        width: 7rem;
+    }
+
+    .btn .btnspan {
+        font-size: 1rem;
+    }
+
+    #img-view {
+        top: auto;
+        bottom: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40%;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+
+    .main {
+        width: 26rem;
+    }
+}
